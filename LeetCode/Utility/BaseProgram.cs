@@ -23,6 +23,7 @@ namespace Utility
 
         public static void PrintArray<T>(T[] t)
         {
+            if (t == null || t.Length == 0) return;
             foreach (var item in t)
             {
                 Console.WriteLine(item);
