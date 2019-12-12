@@ -9,82 +9,109 @@ namespace _3Sum
     {
         static void Main(string[] args)
         {
-            IList<IList<int>> list = Solution.ThreeSum(nums1);
+            IList<IList<int>> list = Solution.ThreeSum1(nums1);
             PrintArray(list);
             Read();
         }
     }
 
-    class ItemEqualityComparer : IEqualityComparer<IList<int>>
-    {
-        public bool Equals(IList<int> x, IList<int> y)
-        {
-            if (x.Count != y.Count) return false;
-            foreach (var item in x)
-            {
-                if (!y.Contains(item))
-                {
-                    return false;
-                }
-            }
-
-            foreach (var item in y)
-            {
-                if (!x.Contains(item))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        public int GetHashCode(IList<int> obj)
-        {
-            int i = 0;
-            foreach (var item in obj)
-            {
-                i += item.GetHashCode();
-            }
-            return i;
-        }
-    }
-
     public static class Solution
     {
-        const int N = 0;
         public static IList<IList<int>> ThreeSum(int[] nums)
         {
-            IEnumerable<IList<int>> list = new List<IList<int>>();
-            if (nums == null || nums.Length < 3) return list.ToList();
-            int temp;
-            List<int> templist = new List<int>();
-            for (int i = 0; i < nums.Length; i++)
+            int SUM = 0;
+            nums = Utility.Utility.Sort(nums);
+            IList<IList<int>> list = new List<IList<int>>();
+            int length = nums.Length;
+            if (nums == null || length < 3 || nums[0] > SUM) return list;
+            int target = 0;
+            bool result = false;
+            for (int i = 0; i < length; i++)
             {
-                temp = N - nums[i];
-                list = list.Union(TwoSum2(nums, temp, i));               
+                target = SUM - nums[i];
+                Dictionary<int, int> dict = new Dictionary<int, int>();
+                for (int j = i + 1; j < length; j++)
+                {
+                    result = dict.TryGetValue(target - nums[j], out int index);
+                    if (result && index != j)
+                    {
+                        list.Add((new int[] { nums[index], nums[j], nums[i] }).ToList());
+                        while (j != length - 1 && nums[j] == nums[j + 1])
+                        {
+                            j++;
+                        }
+                    }
+                    else
+                    {
+                        dict.TryAdd(nums[j], j);
+                    }
+                }
+
+                while (i != length - 1 && nums[i] == nums[i + 1])
+                {
+                    i++;
+                }
             }
-            List<IList<int>> a = list.Distinct(new ItemEqualityComparer()).ToList();
-            return a;
+            return list;
         }
 
-        static IList<IList<int>> TwoSum2(int[] nums, int target, int startIndex)
+        public static IList<IList<int>> ThreeSum1(int[] nums)
         {
-            IList<IList<int>> list = new List<IList<int>>();
-            if (nums == null || nums.Length == 0) return null;
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-            int temp;
-            for (int i = startIndex + 1; i < nums.Length; i++)
+            List<IList<int>> list = new List<IList<int>>();
+            int length = nums.Length;
+            if (length <= 2 || nums[0] > 0)
             {
-                temp = target - nums[i];
-                bool result = dict.TryGetValue(temp, out int index);
-                if (result && index != i)
+                return list;
+            }
+            nums = Utility.Utility.Sort(nums);
+            List<int> subList = new List<int>();
+            int ans = 0, current = int.MinValue, leftValue = int.MinValue, rightValue = int.MaxValue;
+            for (int i = 0; i < length - 2; i++)
+            {
+                // 去除重复集合（List<int>），最左边（i-1）已包含集合，下一个相同值时去除
+                if ((i > 0) && (nums[i] == nums[i - 1]))
                 {
-                    list.Add((new int[] { nums[index], nums[i], nums[startIndex] }).ToList());
+                    continue;
                 }
-                else
+                int left = i + 1, right = length - 1;
+                current = nums[i];
+                while (left < right)
                 {
-                    dict.TryAdd(nums[i], i);
+                    leftValue = nums[left];
+                    rightValue = nums[right];
+                    ans = current + leftValue + rightValue;
+                    if (ans == 0)
+                    {
+                        // 3者和为 0, 插入 list 数据
+                        subList = new List<int>
+                        {
+                            current,
+                            leftValue,
+                            rightValue
+                        };
+                        list.Add(subList);
+                        // right--, left++ 去除重复值
+                        while (rightValue == nums[--right] && left < right)
+                        {
+                        }
+                        while (leftValue == nums[++left] && left < right)
+                        {
+                        }
+                    }
+                    else if (ans > 0)
+                    {
+                        // 和大于 0，多了最大值--，right-- 去除重复值
+                        while (rightValue == nums[--right] && left < right)
+                        {
+                        }
+                    }
+                    else
+                    {
+                        // 和小于 0，少了最小值++，left-- 去除重复值
+                        while (leftValue == nums[++left] && left < right)
+                        {
+                        }
+                    }
                 }
             }
             return list;

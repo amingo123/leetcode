@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Utility
@@ -49,6 +50,11 @@ namespace Utility
                 }
                 WriteL();
             }
+        }
+
+        public static int[] Sort(int[] nums)
+        {
+            return Utility.Sort(nums);
         }
     }
 }
