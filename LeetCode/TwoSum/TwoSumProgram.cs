@@ -4,11 +4,10 @@ using Utility;
 
 namespace TwoSum
 {
-    class Program: BaseProgram
+    class TwoSumProgram : BaseProgram
     {
         static void Main(string[] args)
         {
-            int[] nums = new int[] { 2, 5, 5, 11 };
             int[] r = Solution.TwoSum2(nums, 10);
             PrintArray(r);
             Read();
