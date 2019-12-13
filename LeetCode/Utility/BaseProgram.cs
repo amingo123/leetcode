@@ -9,6 +9,7 @@ namespace Utility
     {
         public readonly static int[] nums = new int[] { 2, 5, 5, 11 };
         public readonly static int[] nums1 = new int[] { -5, 0, -2, 3, -2, 1, 1, 3, 0, -5, 3, 3, 0, -1 };
+        public readonly static int[] nums2 = new int[] { -1, 2, 1, -4 };
         public static void Write(object o)
         {
             Console.Write(o+"\t");

@@ -19,12 +19,12 @@ namespace _3Sum
     {
         public static IList<IList<int>> ThreeSum(int[] nums)
         {
-            int SUM = 0;
-            nums = Utility.Utility.Sort(nums);
-            IList<IList<int>> list = new List<IList<int>>();
-            int length = nums.Length;
-            if (nums == null || length < 3 || nums[0] > SUM) return list;
+            int SUM = 0;            
+            IList<IList<int>> list = new List<IList<int>>();            
+            if (nums?.Length < 3 || nums[0] > SUM) return list;
             int target = 0;
+            int length = nums.Length;
+            nums = Utility.Utility.Sort(nums);
             bool result = false;
             for (int i = 0; i < length; i++)
             {
@@ -58,11 +58,8 @@ namespace _3Sum
         public static IList<IList<int>> ThreeSum1(int[] nums)
         {
             List<IList<int>> list = new List<IList<int>>();
+            if (nums?.Length < 3 || nums[0] > 0) return list;
             int length = nums.Length;
-            if (length <= 2 || nums[0] > 0)
-            {
-                return list;
-            }
             nums = Utility.Utility.Sort(nums);
             List<int> subList = new List<int>();
             int ans = 0, current = int.MinValue, leftValue = int.MinValue, rightValue = int.MaxValue;
