@@ -13,7 +13,9 @@ namespace Utility
         public readonly static int[] nums3 = new int[] { -1, 2, 1, -4 };
         public readonly static int[] nums4 = new int[] { 2, 7, 11, 15 };
         public readonly static int[] nums5 = new int[] { 1, 0, -1, 0, -2, 2 };
-        
+        public readonly static int[] nums6 = new int[] { 2, 1, 0, -1 };
+        public readonly static int[] nums7 = new int[] { 1, -2, -5, -4, -3, 3, 3, 5 };
+
         public static void Write(object o)
         {
             Console.Write(o+"\t");
