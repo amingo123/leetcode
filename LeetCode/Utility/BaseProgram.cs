@@ -14,7 +14,10 @@ namespace Utility
         public readonly static int[] nums4 = new int[] { 2, 7, 11, 15 };
         public readonly static int[] nums5 = new int[] { 1, 0, -1, 0, -2, 2 };
         public readonly static int[] nums6 = new int[] { 2, 1, 0, -1 };
-        public readonly static int[] nums7 = new int[] { 1, -2, -5, -4, -3, 3, 3, 5 };
+        public readonly static int[] nums7 = new int[] { 1, -2, -5, -4, -3, 3, 3, 5 };//-11
+        public readonly static int[] nums8 = new int[] { 0, 1, 5, 0, 1, 5, 5, -4 };//11
+        public readonly static int[] nums9 = new int[] { 0, 4, -5, 2, -2, 4, 2, -1, 4 };//12
+        public readonly static int[] nums10 = new int[] { -7, -5, 0, 7, 1, 1, -10, -2, 7, 7, -2, -6, 0, -10, -5, 7, -8, 5 };//28
 
         public static void Write(object o)
         {

@@ -28,6 +28,8 @@ namespace _4Sum
             nums = templist.ToArray();
 
             int length = nums.Length;
+            if (target < 4 * nums[0] || target > 4 * nums[length - 1]) return list;
+
             int ans = 0, current = int.MinValue, leftValue = int.MinValue, rightValue = int.MaxValue;
             List<int> subList = new List<int>();
             for (int k = 0; k < length - 3; k++)
@@ -37,14 +39,17 @@ namespace _4Sum
                 {
                     continue;
                 }
-                
+
+                if (target - nums[k] < 3 * nums[k] || target - nums[k] > 3 * nums[length - 1]) continue;
+
                 for (int i = k + 1; i < length - 2; i++)
                 {
                     // 去除重复集合（List<int>），最左边（i-1）已包含集合，下一个相同值时去除
                     if ((i > k + 1) && (nums[i] == nums[i - 1]))
                     {
                         continue;
-                    }
+                    }                    
+
                     int left = i + 1, right = length - 1;
                     current = nums[i];
                     while (left < right)
