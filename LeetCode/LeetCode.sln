@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4Sum II", "4Sum II\4Sum II.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Add Two Numbers", "2. Add Two Numbers\2. Add Two Numbers.csproj", "{CAA70755-6A9C-492B-899A-7634FB9DA987}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "67. Add Binary", "67. Add Binary\67. Add Binary.csproj", "{74932C07-F97D-4A4C-ABA2-55E57DA5DA9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{CAA70755-6A9C-492B-899A-7634FB9DA987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAA70755-6A9C-492B-899A-7634FB9DA987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAA70755-6A9C-492B-899A-7634FB9DA987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74932C07-F97D-4A4C-ABA2-55E57DA5DA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74932C07-F97D-4A4C-ABA2-55E57DA5DA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74932C07-F97D-4A4C-ABA2-55E57DA5DA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74932C07-F97D-4A4C-ABA2-55E57DA5DA9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
