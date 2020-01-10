@@ -20,7 +20,7 @@ namespace MultiThreadSummation
             int end = 10000000;
             int max = 2000;
             int length = end / max + 1;
-            int coreCount = 2*Environment.ProcessorCount;
+            int coreCount = 2 * Environment.ProcessorCount;
             stopwatch.Start();
             Parallel.For(start, length, new ParallelOptions() { MaxDegreeOfParallelism = coreCount },(i) =>
             {
