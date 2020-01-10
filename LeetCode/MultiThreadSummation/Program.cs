@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Utility;
@@ -13,16 +15,18 @@ namespace MultiThreadSummation
         static void Main(string[] args)
         {
             Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start(); //  开始监视代码运行时间
+            
             int start = 1;
             int end = 10000000;
-            int max = 4000;
+            int max = 2000;
             int length = end / max + 1;
-            Parallel.For(start, length, (i) =>
+            int coreCount = 2*Environment.ProcessorCount;
+            stopwatch.Start();
+            Parallel.For(start, length, new ParallelOptions() { MaxDegreeOfParallelism = coreCount },(i) =>
             {
                 if (i * max >= end)
                 {
-                    Interlocked.Add(ref sum, Sum((i - 1) * max , end +1));
+                    Interlocked.Add(ref sum, Sum((i - 1) * max, end + 1));
                 }
                 else
                 {
@@ -32,15 +36,14 @@ namespace MultiThreadSummation
             stopwatch.Stop();
             WriteL("Parallel.For程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
 
-            stopwatch.Start();
-            sum = 0;
-            for (int i = 0; i <= end; i++)
-            {
-                sum = sum + i;
-            }
-            stopwatch.Stop();
-            WriteL("程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
-
+            //stopwatch.Start();
+            //sum = 0;
+            //for (int i = 0; i <= end; i++)
+            //{
+            //    sum = sum + i;
+            //}
+            //stopwatch.Stop();
+            //WriteL("For程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
             Read();
         }
 
