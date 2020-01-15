@@ -35,15 +35,18 @@ namespace MultiThreadSummation
             });
             stopwatch.Stop();
             WriteL("Parallel.For程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
+            sum = 0;
 
-            //stopwatch.Start();
-            //sum = 0;
-            //for (int i = 0; i <= end; i++)
-            //{
-            //    sum = sum + i;
-            //}
-            //stopwatch.Stop();
-            //WriteL("For程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
+            stopwatch.Start();
+            double[] resultData = new double[end+1];
+            // created a partioner that will chunk the data
+            OrderablePartitioner<Tuple<int, int>> chunkPart = Partitioner.Create(0, resultData.Length, max);
+            // perform the loop in chunks
+            Parallel.ForEach(chunkPart, chunkRange => {
+                Interlocked.Add(ref sum, Sum(chunkRange.Item1, chunkRange.Item2));
+            });
+            stopwatch.Stop();
+            WriteL("Parallel.For程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
             Read();
         }
 
