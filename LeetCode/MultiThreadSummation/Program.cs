@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -52,7 +53,17 @@ namespace MultiThreadSummation
             //}
             //stopwatch.Stop();
             //WriteL("程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
-
+            sum = 0;
+            stopwatch.Start();
+            double[] resultData = new double[end + 1];
+            // created a partioner that will chunk the data
+            OrderablePartitioner<Tuple<int, int>> chunkPart = Partitioner.Create(0, resultData.Length, max);
+            // perform the loop in chunks
+            Parallel.ForEach(chunkPart, chunkRange => {
+                Interlocked.Add(ref sum, Sum(chunkRange.Item1, chunkRange.Item2));
+            });
+            stopwatch.Stop();
+            WriteL("OrderablePartitioner程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
             Read();
         }
 
