@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Utility;
@@ -18,28 +19,39 @@ namespace MultiThreadSummation
             int end = 10000000;
             int max = 4000;
             int length = end / max + 1;
+            ThreadLocal<long> ticks = new ThreadLocal<long>(true);
             Parallel.For(start, length, (i) =>
             {
-                if (i * max >= end)
-                {
-                    Interlocked.Add(ref sum, Sum((i - 1) * max , end +1));
-                }
-                else
-                {
-                    Interlocked.Add(ref sum, Sum((i - 1) * max, i * max));
-                }
+
+                //1
+                //Interlocked.Add(ref sum, Sum((i - 1) * max, i * max));
+
+                //2
+                //if (i * max >= end)
+                //{
+                //    Interlocked.Add(ref sum, Sum((i - 1) * max , end +1));
+                //}
+                //else
+                //{
+                //    Interlocked.Add(ref sum, Sum((i - 1) * max, i * max));
+                //}
+
+                //3
+                ticks.Value += Sum((i - 1) * max, i * max);
             });
+            //sum += end;
+            sum = ticks.Values.Sum() + end;
             stopwatch.Stop();
             WriteL("Parallel.For程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
 
-            stopwatch.Start();
-            sum = 0;
-            for (int i = 0; i <= end; i++)
-            {
-                sum = sum + i;
-            }
-            stopwatch.Stop();
-            WriteL("程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
+            //stopwatch.Start();
+            //sum = 0;
+            //for (int i = 0; i <= end; i++)
+            //{
+            //    sum = sum + i;
+            //}
+            //stopwatch.Stop();
+            //WriteL("程序运行时间:" + stopwatch.ElapsedMilliseconds + "ms result=" + sum);
 
             Read();
         }
