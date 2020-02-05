@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiThreadSummation", "Mul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadMethod", "ThreadMethod\ThreadMethod.csproj", "{D3289AA4-E5CB-4067-8879-6FB5789D1F4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lock", "Lock\Lock.csproj", "{0EF59CCB-777B-4F07-B0F4-91341D604EF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lock", "Lock\Lock.csproj", "{0EF59CCB-777B-4F07-B0F4-91341D604EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAsync", "TaskAsync\TaskAsync.csproj", "{DD460750-4172-44A5-BC63-9437BF153801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,14 @@ Global
 		{0EF59CCB-777B-4F07-B0F4-91341D604EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0EF59CCB-777B-4F07-B0F4-91341D604EF2}.Release|x64.ActiveCfg = Release|Any CPU
 		{0EF59CCB-777B-4F07-B0F4-91341D604EF2}.Release|x64.Build.0 = Release|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Debug|x64.Build.0 = Debug|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Release|x64.ActiveCfg = Release|Any CPU
+		{DD460750-4172-44A5-BC63-9437BF153801}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
