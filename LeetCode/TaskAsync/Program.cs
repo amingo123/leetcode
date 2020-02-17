@@ -10,7 +10,7 @@ namespace TaskAsync
         static async Task Main(string[] args)
         {
             Console.WriteLine("main start");
-            dojob();
+            Task t = dojob();
             WriteL("main end");
             Read();
         }
@@ -19,7 +19,9 @@ namespace TaskAsync
         {
             Console.WriteLine("dojob start");
             Task t = test();
-            //t.Wait();//阻塞 
+            //t.Wait();//阻塞
+            //await Task.Yield();
+            //Thread.Sleep(2000);
             await t;//非阻塞 调用该方法的线程会继续执行
             WriteL("dojob end");
         }
