@@ -8,8 +8,6 @@ namespace ThreadMethod
     {
         static void Main(string[] args)
         {
-            ThreadPool
-            
             Console.WriteLine("Hello World!");
         }
 

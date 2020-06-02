@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadMethod", "ThreadMetho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lock", "Lock\Lock.csproj", "{0EF59CCB-777B-4F07-B0F4-91341D604EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAsync", "TaskAsync\TaskAsync.csproj", "{DD460750-4172-44A5-BC63-9437BF153801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAsync", "TaskAsync\TaskAsync.csproj", "{DD460750-4172-44A5-BC63-9437BF153801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53.MaximumSubarray", "53.MaximumSubarray\53.MaximumSubarray.csproj", "{404FBC51-7962-4F7B-86A2-A36947AC8496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,14 @@ Global
 		{DD460750-4172-44A5-BC63-9437BF153801}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD460750-4172-44A5-BC63-9437BF153801}.Release|x64.ActiveCfg = Release|Any CPU
 		{DD460750-4172-44A5-BC63-9437BF153801}.Release|x64.Build.0 = Release|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Debug|x64.Build.0 = Debug|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Release|x64.ActiveCfg = Release|Any CPU
+		{404FBC51-7962-4F7B-86A2-A36947AC8496}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
