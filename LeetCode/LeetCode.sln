@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "100. SameTree", "100. SameT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "101. SymmetricTree", "101. SymmetricTree\101. SymmetricTree.csproj", "{EA91B508-58B7-4228-9BDC-D915F700F41A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "104. MaximumDepthofBinaryTree", "104. MaximumDepthofBinaryTree\104. MaximumDepthofBinaryTree.csproj", "{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +193,14 @@ Global
 		{EA91B508-58B7-4228-9BDC-D915F700F41A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EA91B508-58B7-4228-9BDC-D915F700F41A}.Release|x64.ActiveCfg = Release|Any CPU
 		{EA91B508-58B7-4228-9BDC-D915F700F41A}.Release|x64.Build.0 = Release|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Debug|x64.Build.0 = Debug|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|x64.ActiveCfg = Release|Any CPU
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
