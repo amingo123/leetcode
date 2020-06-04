@@ -1,8 +1,9 @@
 ﻿using System;
+using Utility;
 
 namespace _101._SymmetricTree
 {
-    class Program
+    class Program : BaseProgram
     {
         static void Main(string[] args)
         {
@@ -13,7 +14,7 @@ namespace _101._SymmetricTree
             TreeNode tn5 = new TreeNode(4);
             TreeNode tn4 = new TreeNode(3);
             TreeNode tn2 = new TreeNode(2, tn4, tn5);
-           
+
             TreeNode tn1 = new TreeNode(1, tn2, tn3);
             var i = Solution.IsSymmetric(tn1);
             Console.WriteLine(i);
@@ -29,19 +30,6 @@ namespace _101._SymmetricTree
             tn1 = new TreeNode(1, tn2, tn3);
             i = Solution.IsSymmetric(tn1);
             Console.WriteLine(i);
-        }
-    }
-
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
         }
     }
 

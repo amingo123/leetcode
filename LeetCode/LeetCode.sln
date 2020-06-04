@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "101. SymmetricTree", "101. 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "104. MaximumDepthofBinaryTree", "104. MaximumDepthofBinaryTree\104. MaximumDepthofBinaryTree.csproj", "{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tree", "Tree", "{DE8E2E6B-3B17-4917-8578-99808E6D29B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "107. BinaryTreeLevelOrderTraversalII", "107. BinaryTreeLevelOrderTraversalII\107. BinaryTreeLevelOrderTraversalII.csproj", "{CBAB79C2-C840-42A5-BB6D-F618989C8145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,9 +205,23 @@ Global
 		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|x64.ActiveCfg = Release|Any CPU
 		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948}.Release|x64.Build.0 = Release|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Debug|x64.Build.0 = Debug|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Release|x64.ActiveCfg = Release|Any CPU
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4914D7F9-BCF2-46FC-A57D-820197909CC5} = {DE8E2E6B-3B17-4917-8578-99808E6D29B3}
+		{EA91B508-58B7-4228-9BDC-D915F700F41A} = {DE8E2E6B-3B17-4917-8578-99808E6D29B3}
+		{E5085DA8-94AF-4DBC-96F5-3B7E7B4DD948} = {DE8E2E6B-3B17-4917-8578-99808E6D29B3}
+		{CBAB79C2-C840-42A5-BB6D-F618989C8145} = {DE8E2E6B-3B17-4917-8578-99808E6D29B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D521E684-3AF2-4E29-8B22-F17C76836A50}
